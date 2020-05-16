@@ -21,7 +21,7 @@ def svg_to_points(svg):
     for x in range(len(curve)):
         points += curve[x].split(",")
         if points[-1] is not None:
-            pair_array += [(points[0], points[1])]
+            pair_array += [(float(points[0]), float(points[1]))]
             points = points[2: -1]
 
     return pair_array
