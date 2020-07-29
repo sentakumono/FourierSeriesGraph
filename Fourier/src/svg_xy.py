@@ -12,8 +12,7 @@ def svg_to_points(svg):
     curve = []
     path = path_strings[0]
     while "Z" in path:
-        for element in path[path.index('C') + 1: path.index('Z')].split():
-            curve += [element]
+        curve += [element for element in path[path.index('C') + 1: path.index('Z')].split()]
         path = path[path.index("Z") + 1: len(path)]
 
     pair_array = []
